@@ -4,8 +4,8 @@ from pathlib import Path
 ENCODE = "utf-8"
 # メインウィンドウタイトル
 MAIN_WINDOW_TITLE = "TESVFontForge"
-# プレビューウィンドウタイトル
-PREVIEW_WINDOW_TITLE = "プレビュー"
+# Preview window title (translation key: single_font.preview_button)
+PREVIEW_WINDOW_TITLE = "Preview"
 # 各種ディレクトリ
 BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"

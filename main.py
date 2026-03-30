@@ -11,6 +11,7 @@ from PyQt6.QtGui import QColor, QPalette
 from PyQt6.QtWidgets import QApplication
 
 from src.gui.main_window import MainWindow
+from src.utils.i18n import set_language
 
 
 def parse_cli_args(argv: list[str]) -> tuple[bool, list[str]]:
@@ -105,6 +106,10 @@ def _apply_theme(app: QApplication, *, dark_mode: bool) -> None:
 
 def main() -> None:
     debug, app_argv = parse_cli_args(sys.argv)
+
+    # Load the translation catalogue before any UI is created so that every
+    # widget constructed during startup already uses the correct language.
+    set_language()
 
     # Windowsでタスクバーアイコンを正しく表示させるための設定
     if sys.platform == "win32":
